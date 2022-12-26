@@ -1,14 +1,8 @@
 class Brewery < ApplicationRecord
-  geocoded_by :address
-  # after_validation :geocode, if: ->(address_field) {
-  #                              address_field.value.present? and address_field.value_changed?
-  #                            }
-  # before_save :if => { |_| self.address_changed? && self.address.present? } do
-  #   result = Geocoder.search(self.address)
-  #   self.lat, self.lng = result.lat, result.lng
-  # end
+  geocoded_by :location
+  # after_validation :geocode
 
-  def address
-    [street, city, state, zipcode].compact.join(", ")
+  def location
+    address
   end
 end
