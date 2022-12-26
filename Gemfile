@@ -48,3 +48,4 @@ group :development do
   # gem "spring"
 end
 
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
